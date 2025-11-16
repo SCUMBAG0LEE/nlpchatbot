@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern>APA KESIMPULAN JURNAL INI</pattern>
+    <template>
+Ada tiga kesimpulan utama:
+1. Sistem moderator otomatis (Bot Discord + Backend Python) berhasil diimplementasikan.
+2. Metode Edit Distance efektif mendeteksi kata toksik dan variasinya yang disamarkan (salah eja).
+3. Keterbatasan utamanya adalah kurangnya pemahaman kontekstual, yang bisa menyebabkan 'false positive' pada kata bermakna ganda.
+    </template>
+</category>
+<category>
+    <pattern>JADI KESIMPULANNYA *</pattern>
+    <template><srai>APA KESIMPULAN JURNAL INI</srai></template>
+</category>
+<category>
+    <pattern>APA SARAN PENGEMBANGAN SELANJUTNYA</pattern>
+    <template>Disarankan untuk mengintegrasikan teknik NLP yang lebih maju, seperti Part-of-Speech (POS) Tagging atau analisis N-gram.</template>
+</category>
+<category>
+    <pattern>PENGEMBANGAN SELANJUTNYA *</pattern>
+    <template><srai>APA SARAN PENGEMBANGAN SELANJUTNYA</srai></template>
+</category>
+<category>
+    <pattern>SARANNYA APA</pattern>
+    <template><srai>APA SARAN PENGEMBANGAN SELANJUTNYA</srai></template>
+</category>
+<category>
+    <pattern>APA ITU POS TAGGING</pattern>
+    <template>Part-of-Speech (POS) Tagging disarankan untuk mengidentifikasi peran sebuah kata dalam kalimat.</template>
+</category>
+<category>
+    <pattern>UNTUK APA POS TAGGING</pattern>
+    <template>Misalnya, untuk membantu sistem membedakan kapan kata "anjing" digunakan sebagai kata benda (hewan) dan kapan sebagai kata makian, berdasarkan konteks kalimat.</template>
+</category>
+<category>
+    <pattern>APA ITU N GRAM</pattern>
+    <template>Analisis N-gram disarankan untuk mengenali frasa toksik (kombinasi kata), bukan hanya kata tunggal.</template>
+</category>
+<category>
+    <pattern>CONTOH N GRAM</pattern>
+    <template>Contohnya, sistem bisa dilatih untuk mengenali frasa 'dasar anjing' (sebagai 2-gram) sebagai toksik, sementara kata 'anjing' (1-gram) saja bisa diperlakukan berbeda.</template>
+</category>
+</aiml>

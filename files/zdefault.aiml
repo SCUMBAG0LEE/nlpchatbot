@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern>*</pattern>
+    <template>
+        <random>
+            <li>Maaf, saya tidak mengerti pertanyaan itu.</li>
+            <li>Saya belum dilatih untuk menjawab itu.</li>
+            <li>Bisakah Anda bertanya dengan cara lain? Saya hanya tahu tentang jurnal moderasi Discord.</li>
+            <li>Saya tidak menemukan jawaban untuk itu di dalam jurnal.</li>
+        </random>
+    </template>
+</category>
+</aiml>

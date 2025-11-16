@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern>APA JUDUL JURNALNYA</pattern>
+    <template>Judulnya adalah "<get name="journal_title"/>"</template>
+</category>
+<category>
+    <pattern>* JUDUL JURNAL *</pattern>
+    <template><srai>APA JUDUL JURNALNYA</srai></template>
+</category>
+<category>
+    <pattern>JUDUL PENELITIAN *</pattern>
+    <template><srai>APA JUDUL JURNALNYA</srai></template>
+</category>
+<category>
+    <pattern>SIAPA PENULIS JURNAL INI</pattern>
+    <template>Jurnal ini ditulis oleh William Gunawan dan Nathaniel Ervin Jahja.</template>
+</category>
+<category>
+    <pattern>SIAPA YANG MEMBUAT JURNAL *</pattern>
+    <template><srai>SIAPA PENULIS JURNAL INI</srai></template>
+</category>
+<category>
+    <pattern>DARI MANA PENULISNYA</pattern>
+    <template>Mereka dari Informatika, Fakultas Teknik, Universitas Tarumanagara.</template>
+</category>
+<category>
+    <pattern>APA TUJUAN PENELITIAN INI</pattern>
+    <template>Tujuan utamanya adalah merancang dan mengimplementasikan sistem moderator otomatis untuk Discord menggunakan pendekatan Natural Language Processing (NLP).</template>
+</category>
+<category>
+    <pattern>JURNAL INI TENTANG APA</pattern>
+    <template><srai>APA TUJUAN PENELITIAN INI</srai></template>
+</category>
+<category>
+    <pattern>APA ABSTRAKNYA</pattern>
+    <template>Abstraknya menjelaskan bahwa penelitian ini membuat moderator Discord otomatis pakai metode Edit Distance untuk mendeteksi pesan toksik, termasuk yang salah eja. Sistem ini pakai arsitektur Node.js dan Python/Flask.</template>
+</category>
+<category>
+    <pattern>APA MASALAH YANG DIATASI</pattern>
+    <template>Masalah utamanya adalah moderasi manual di komunitas online seperti Discord seringkali tidak efisien dan lambat.</template>
+</category>
+<category>
+    <pattern>KENAPA PERLU MODERATOR OTOMATIS</pattern>
+    <template>Karena moderasi manual tidak mampu mengimbangi volume pesan yang besar secara real-time. Selain itu, filter kata kunci sederhana mudah dihindari oleh pengguna dengan memodifikasi ejaan (misalnya, "sh!t" atau "b@stard").</template>
+</category>
+<category>
+    <pattern>KELEMAHAN FILTER BIASA *</pattern>
+    <template><srai>KENAPA PERLU MODERATOR OTOMATIS</srai></template>
+</category>
+<category>
+    <pattern>APA TUJUAN SPESIFIKNYA</pattern>
+    <template>
+Secara spesifik, tujuannya ada tiga:
+1. Mendeteksi kata-kata toksik dalam pesan.
+2. Mengidentifikasi variasi ejaan kata toksik pakai kemiripan string.
+3. Menghapus pesan pelanggar dan memberi peringatan otomatis.
+    </template>
+</category>
+<category>
+    <pattern>APA KATA KUNCINYA</pattern>
+    <template>Kata kuncinya adalah: Natural Language Processing, Discord, Moderasi Konten, Edit Distance, dan Toksisitas.</template>
+</category>
+</aiml>

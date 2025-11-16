@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern>APA HASIL PENGUJIANNYA</pattern>
+    <template>Hasil pengujian menunjukkan sistem berhasil mendeteksi dan menghapus kata toksik eksak (kasus 1: "shit") dan kata toksik salah eja (kasus 2: "b@stard") berkat Edit Distance.</template>
+</category>
+<category>
+    <pattern>BAGAIMANA HASIL TESNYA</pattern>
+    <template><srai>APA HASIL PENGUJIANNYA</srai></template>
+</category>
+<category>
+    <pattern>BAGAIMANA DENGAN KATA MIRIP TAPI NON TOKSIK</pattern>
+    <template>Sistem juga berhasil dalam kasus ini. Contohnya, pesan "I need a new shirt" (kasus 3) TIDAK dihapus. Ini karena rasio kemiripannya dengan kata toksik (seperti 'shit') berada di bawah ambang batas 85%.</template>
+</category>
+<category>
+    <pattern>* 'SHIRT' *</pattern>
+    <template><srai>BAGAIMANA DENGAN KATA MIRIP TAPI NON TOKSIK</srai></template>
+</category>
+<category>
+    <pattern>APA KELEMAHAN SISTEM INI</pattern>
+    <template>Kelemahan atau keterbatasan utama dari metode ini adalah kurangnya pemahaman kontekstual atau semantik kalimat.</template>
+</category>
+<category>
+    <pattern>APA KETERBATASAN METODE INI</pattern>
+    <template><srai>APA KELEMAHAN SISTEM INI</srai></template>
+</category>
+<category>
+    <pattern>MAKSUDNYA BAGAIMANA</pattern>
+    <template>Maksudnya, sistem tidak bisa memahami makna kata yang ambigu. Contohnya adalah pada kasus 4 dan 5 yang menggunakan kata "anjing".</template>
+</category>
+<category>
+    <pattern>BERIKAN CONTOH KELEMAHANNYA</pattern>
+    <template><srai>MAKSUDNYA BAGAIMANA</srai></template>
+</category>
+<category>
+    <pattern>JELASKAN KASUS ANJING</pattern>
+    <template>
+Ada dua kasus.
+1. Kasus 5 ("dasar anjing lu"): Pesan ini berhasil dihapus, dan itu adalah hasil yang diharapkan.
+2. Kasus 4 ("Gary baru dapat anjing"): Pesan ini juga dihapus oleh sistem, padahal ini adalah GAGAL (False Positive).
+    </template>
+</category>
+<category>
+    <pattern>* KASUS 4 *</pattern>
+    <template><srai>JELASKAN KASUS ANJING</srai></template>
+</category>
+<category>
+    <pattern>KENAPA KASUS 4 GAGAL</pattern>
+    <that>* INI ADALAH GAGAL (FALSE POSITIVE)</that>
+    <template>Itu gagal (False Positive) karena kata "anjing" ditambahkan ke daftar toksik. Sistem tidak bisa memahami bahwa di kasus 4, kata "anjing" digunakan dalam arti harfiah (hewan), bukan sebagai umpatan. Ini menunjukkan kelemahan Edit Distance saja.</template>
+</category>
+<category>
+    <pattern>KENAPA PESAN GARY DIHAPUS</pattern>
+    <template>Pesan "Gary baru dapat anjing" (kasus 4) dihapus karena kata "anjing" ada di daftar toksik. Sistem tidak punya kemampuan memahami konteks semantik, jadi ia salah mengira itu pesan toksik. Ini disebut False Positive.</template>
+</category>
+</aiml>

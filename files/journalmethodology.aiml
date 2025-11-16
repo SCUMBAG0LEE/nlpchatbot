@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern>BAGAIMANA ARSITEKTUR SISTEMNYA</pattern>
+    <template>
+Sistem ini menggunakan arsitektur client-server yang terpisah.
+1. Client: Bot Discord berbasis Node.js.
+2. Server: Backend NLP berbasis Python dengan micro-framework Flask.
+    </template>
+</category>
+<category>
+    <pattern>SISTEMNYA PAKAI APA</pattern>
+    <template><srai>BAGAIMANA ARSITEKTUR SISTEMNYA</srai></template>
+</category>
+<category>
+    <pattern>APA TUGAS BOT DISCORD</pattern>
+    <template>Bot Discord (Client) bertugas memantau pesan, mengirimkan konten pesan itu ke backend (Server) untuk dianalisis, dan melakukan tindakan (seperti menghapus pesan) berdasarkan respons dari backend.</template>
+</category>
+<category>
+    <pattern>CLIENTNYA PAKAI APA</pattern>
+    <template>Client-nya adalah Bot Discord yang dibangun pakai Node.js dengan library discord.js.</template>
+</category>
+<category>
+    <pattern>APA TUGAS BACKEND NLP</pattern>
+    <template>Backend NLP (Server) menyediakan API endpoint yang menerima teks. Logika utama untuk deteksi toksisitas menggunakan library fuzzywuzzy (Edit Distance) ada di sini.</template>
+</category>
+<category>
+    <pattern>SERVERNYA PAKAI APA</pattern>
+    <template>Servernya dibangun pakai Python dengan micro-framework Flask.</template>
+</category>
+<category>
+    <pattern>JELASKAN ALUR KERJA SISTEMNYA</pattern>
+    <template>
+Alur kerjanya:
+1. User mengirim pesan di kanal.
+2. Bot Node.js menerima pesan (event messageCreate).
+3. Bot memeriksa pesan (bukan dari bot lain).
+4. Bot mengirim HTTP POST ke backend Python/Flask.
+5. Backend melakukan tokenisasi (memecah pesan jadi kata).
+6. Backend membandingkan tiap kata dengan daftar TOXIC_WORDS.
+7. Backend menghitung kemiripan (fuzz.ratio).
+8. Jika skor >= 70% (toksik) atau bersih, backend kirim respons JSON.
+9. Bot Node.js menerima respons dan bertindak (misal, hapus pesan).
+10. Bot menampilkan balasan/peringatan ke user.
+    </template>
+</category>
+<category>
+    <pattern>ALURNYA GIMANA</pattern>
+    <template><srai>JELASKAN ALUR KERJA SISTEMNYA</srai></template>
+</category>
+<category>
+    <pattern>METODE APA YANG DIGUNAKAN</pattern>
+    <template>Metode utama yang digunakan adalah Edit Distance.</template>
+</category>
+<category>
+    <pattern>APA ITU EDIT DISTANCE</pattern>
+    <template>Edit Distance adalah ukuran yang mengkuantifikasi seberapa "berbeda" dua buah string. Secara spesifik, penelitian ini menggunakan Jarak Levenshtein.</template>
+</category>
+<category>
+    <pattern>APA ITU JARAK LEVENSHTEIN</pattern>
+    <template>Jarak Levenshtein menghitung jumlah minimum operasi penyuntingan satu karakter (insersi, delesi, atau substitusi) yang diperlukan untuk mengubah satu string menjadi string lainnya.</template>
+</category>
+<category>
+    <pattern>LIBRARY APA YANG DIPAKAI</pattern>
+    <template>Sistem ini menggunakan library Python 'fuzzywuzzy', yang merupakan implementasi dari algoritma Edit Distance.</template>
+</category>
+<category>
+    <pattern>BAGAIMANA RUMUS KEMIRIPANNYA</pattern>
+    <template>
+Rumus rasio kemiripan (berdasarkan Persamaan 1) yang dipakai fuzzywuzzy adalah:
+Rasio = ((panjang(S1) + panjang(S2) - JarakLevenshtein(S1,S2)) / (panjang(S1) + panjang(S2))) * 100.
+S1 adalah kata dari user, S2 adalah kata dari daftar toksik.
+    </template>
+</category>
+<category>
+    <pattern>BERIKAN CONTOH PERHITUNGAN</pattern>
+    <template>
+Tentu. Mari kita hitung kata "b@stard" (S1) dibandingkan dengan "bastard" (S2).
+1. String 1: "b@stard" (panjang 7).
+2. String 2: "bastard" (panjang 7).
+3. Jarak Levenshtein-nya adalah 1 (hanya perlu 1 substitusi: ganti '@' dengan 'a').
+4. Rasio = (7 + 7 - 1) / (7 + 7) * 100 = 13 / 14 * 100 = sekitar 92.8%.
+Karena 92.8% lebih tinggi dari ambang batas (misal 85%), pesan ini ditandai toksik.
+    </template>
+</category>
+<category>
+    <pattern>BERAPA AMBANG BATASNYA</pattern>
+    <template>Dalam diagram alur kerja, ambang batasnya adalah skor >= 70%. Namun, dalam contoh perhitungan (b@stard) dan pengujian (kasus 3), ambang batas 85% digunakan sebagai referensi.</template>
+</category>
+</aiml>

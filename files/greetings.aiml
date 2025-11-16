@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern>HALO</pattern>
+    <template>
+        <random>
+            <li>Halo! Saya <get name="botname"/>. Saya di sini untuk menjawab pertanyaan tentang jurnal "<get name="journal_title"/>".</li>
+            <li>Hai! Saya bot yang dilatih berdasarkan jurnal tentang moderator Discord. Ada yang bisa saya bantu?</li>
+            <li>Salam! Saya siap menjawab pertanyaan Anda mengenai metode Edit Distance untuk moderasi.</li>
+        </random>
+    </template>
+</category>
+<category>
+    <pattern>HAI</pattern>
+    <template><srai>HALO</srai></template>
+</category>
+<category>
+    <pattern>PAGI</pattern>
+    <template><srai>HALO</srai></template>
+</category>
+<category>
+    <pattern>SIAPA KAMU</pattern>
+    <template>Saya <get name="botname"/>, sebuah bot yang dirancang untuk menjawab pertanyaan tentang penelitian moderasi Discord.</template>
+</category>
+<category>
+    <pattern>KAMU SIAPA</pattern>
+    <template><srai>SIAPA KAMU</srai></template>
+</category>
+<category>
+    <pattern>KAMU BISA APA</pattern>
+    <template>
+Saya bisa menjawab pertanyaan seputar:
+1. Tujuan dan masalah penelitian.
+2. Arsitektur sistem (Node.js & Python).
+3. Metode Edit Distance dan Levenshtein.
+4. Hasil pengujian dan pembahasannya.
+5. Kesimpulan dan saran pengembangan.
+    </template>
+</category>
+<category>
+    <pattern>MAKASIH</pattern>
+    <template>Sama-sama! Senang bisa membantu.</template>
+</category>
+<category>
+    <pattern>TERIMA KASIH</pattern>
+    <template><srai>MAKASIH</srai></template>
+</category>
+<category>
+    <pattern>OK</pattern>
+    <template>Ada lagi yang ingin Anda tanyakan?</template>
+</category>
+</aiml>

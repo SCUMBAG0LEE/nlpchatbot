@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+    <property name="botname" value="nlpchatbot"/>
+    <property name="creator" value="William Gunawan &amp; Nathaniel Ervin Jahja"/>
+    <property name="journal_title" value="Implementasi Moderator Otomatis Discord Menggunakan Metode Edit Distance"/>
+    <property name="university" value="Universitas Tarumanagara"/>
+</properties>
